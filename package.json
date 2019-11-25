@@ -1,0 +1,51 @@
+{
+  "name": "skillbox_examination",
+  "version": "1.0.0",
+  "description": "React app for the Skillbox examination",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EntaltsevSN/skillbox_examination.git"
+  },
+  "keywords": [
+    "skillbox",
+    "exam",
+    "examination",
+    "react",
+    "js",
+    "es6",
+    "redux",
+    "javascript"
+  ],
+  "author": "Entaltsev Stanislav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EntaltsevSN/skillbox_examination/issues"
+  },
+  "homepage": "https://github.com/EntaltsevSN/skillbox_examination#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
+  }
+}
