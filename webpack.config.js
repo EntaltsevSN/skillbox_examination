@@ -1,6 +1,7 @@
 let path = require('path');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+
 let config = {
   entry: './src/index.js',
   output: {
@@ -15,10 +16,10 @@ let config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
         })
       }
     ] 

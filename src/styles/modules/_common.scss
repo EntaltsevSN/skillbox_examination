@@ -1,0 +1,112 @@
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-family: $font_family;
+  line-height: $line_height;
+  color: $text_color;
+  background-color: $body_color;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $spacer_big;
+}
+
+li {
+  margin-bottom: $spacer_big / 2;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6, 
+.h6 {
+  font-weight: $font_weight_heading;
+  font-family: $font_family_heading;
+}
+
+h1,
+.h1 {
+  font-size: $font_size_h1;
+}
+
+h2,
+.h2 {
+  font-size: $font_size_h2;
+}
+
+h3,
+.h3 {
+  font-size: $font_size_h3;
+}
+
+h4,
+.h4 {
+  font-size: $font_size_h4;
+}
+
+h5,
+.h5 {
+  font-size: $font_size_h5;
+}
+
+h6,
+.h6 {
+  font-size: $font_size_h6;
+}
+
+a {
+  color: $link_color;
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root,
+.layout {
+  height: 100%;
+}
+
+body {
+  background: rgb(236,241,254);
+  background: radial-gradient(circle, rgba(236,241,254,1) 0%, rgba(235,235,236,1) 100%);
+}
+
+.layout {
+  display: flex;
+  flex-flow: column nowrap;
+}

@@ -1,0 +1,10 @@
+.footer {
+  background-color: #fafbfc;
+  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .975);
+  padding: $spacer;
+  text-align: center;
+
+  p {
+    margin-bottom: $spacer * .75;
+  }
+}

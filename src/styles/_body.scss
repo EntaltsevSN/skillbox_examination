@@ -1,0 +1,10 @@
+.body {
+  flex-grow: 1;
+  margin: ($spacer * 2) 0;
+}
+
+.body__image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .975);
+}
