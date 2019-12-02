@@ -3,8 +3,42 @@
   margin: ($spacer * 2) 0;
 }
 
+.body__link,
+.body__figure {
+  height: 100%;
+  width: 100%;
+}
+
+.body__figure {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 90.4%;
+  }
+}
+
 .body__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: auto;
   box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .975);
+}
+
+.body__image--horizontal {
+  height: 100%;
+  width: auto;
+}
+
+.body__image--vertical {
+  width: 100%;
+  height: auto;
+}
+
+.body__footer {
+  text-align: center;
 }
