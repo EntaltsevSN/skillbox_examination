@@ -1,16 +1,21 @@
 .header {
   background-color: #fff;
-  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .975);
+  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .85);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
   padding: $spacer;
+  position: relative;
 }
 
 .header__image {
   height: $spacer * 2;
   width: auto;
+
+  @media (max-width: 767px) {
+    height: $spacer * 1.5;
+  }
 }
 
 .header__logo {
@@ -25,4 +30,8 @@
   font-weight: 500;
   margin-left: $spacer * .5;
   color: $text_color;
+
+  @media (max-width: 767px) {
+    font-size: $font-size-h4;
+  }
 }

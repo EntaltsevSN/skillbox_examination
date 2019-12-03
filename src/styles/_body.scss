@@ -1,6 +1,14 @@
 .body {
   flex-grow: 1;
   margin: ($spacer * 2) 0;
+
+  @media (max-width: 767px) {
+    margin: $spacer 0;
+  }
+}
+
+.body__list {
+  padding-left: 0;
 }
 
 .body__link,

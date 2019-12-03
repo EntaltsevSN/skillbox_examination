@@ -1,10 +1,24 @@
 .footer {
   background-color: #fafbfc;
-  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .975);
-  padding: $spacer;
+  box-shadow: 0 0 ($spacer / 4) 0 transparentize($text_color, .85);
+  padding: $spacer $spacer 0;
   text-align: center;
 
   p {
     margin-bottom: $spacer * .75;
+    
+    @media (max-width: 767px) {
+      margin-bottom: $spacer / 2;
+    }
+  }
+}
+
+.footer__copyright {
+  @media (max-width: 767px) {
+    font-size: $font_size - 2;
+  }
+
+  @media (max-width: 767px) {
+    font-size: $font_size - 4;
   }
 }

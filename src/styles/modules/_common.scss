@@ -106,7 +106,7 @@ body {
   background: radial-gradient(circle, rgba(236,241,254,1) 0%, rgba(235,235,236,1) 100%);
 }
 
-.layout {
+#root {
   display: flex;
   flex-flow: column nowrap;
 }

@@ -1,0 +1,148 @@
+.full-photo {
+  flex-grow: 1;
+}
+
+.full-photo__block {
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.full-photo__back {
+  width: 10%;
+  height: 100%;
+  background-color: #f4f5f6;
+}
+
+.full-photo__photo {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.full-photo__figure {
+  height: 100%;
+  position: relative;
+}
+
+.full-photo__image {
+  position: absolute;
+}
+
+.full-photo__link {
+  font-size: $font_size * 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: $text_color;
+
+  @media (max-width: 767px) {
+    font-size: $font_size * 1.5;
+  }
+}
+
+.full-photo__header {
+  padding: $spacer;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.full-photo__avatar {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+
+  @media (max-width: 480px) {
+    height: 40px;
+
+  }
+}
+
+.full-photo__author {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.full-photo__button {
+  display: block;
+}
+
+.full-photo__name {
+  margin-left: $spacer;
+
+  @media (max-width: 480px) {
+    font-size: $font_size - 2;
+  }
+}
+
+.full-photo__sponsor {
+  display: block;
+  font-size: $font_size - 2;
+
+  @media (max-width: 480px) {
+    font-size: $font_size - 4;
+  }
+}
+
+.full-photo__link--download {
+  padding: $spacer / 2;
+  border-radius: $spacer / 4;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #eee;
+  }
+}
+
+.full-photo__icon {
+  font-size: $font-size;
+}
+
+.full-photo__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.full-photo__footer {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: $spacer;
+  background-color: #fff;
+}
+
+.full-photo__settings {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: $spacer;
+}
+
+.full-photo__property--like {
+  color: $text_color;
+
+  &.liked {
+    color: $primary_color;
+  }
+}
+
+.full-photo__value {
+  margin-left: $spacer / 2;
+}
+
+.full-photo__options {
+  @media (max-width: 480px) {
+    display: none;
+  }
+}

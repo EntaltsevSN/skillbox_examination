@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { setPhotos, loadMore, likePhoto, unlikePhoto } from '../actions';
 import unsplash from '../unsplash';
 import { toJson } from 'unsplash-js';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Photo from './photo';
-import Modal from './modal';
+import FullPhoto from './full-photo';
 
 export class Body extends Component {
   constructor(props) {
@@ -14,7 +14,23 @@ export class Body extends Component {
 
     this.setPhotosList = this.setPhotosList.bind(this);
     this.setImageSize = this.setImageSize.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }  
+
+  handleScroll() {
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+    const windowBottom = windowHeight + window.pageYOffset;
+
+    if (windowBottom >= docHeight) {
+      let newPage = this.props.page + 1;
+      
+      this.props.loadMore(newPage)
+      this.setPhotosList(newPage);
+    }
+  }
 
   componentDidMount() {
     unsplash.photos.listPhotos(this.props.page, this.props.limit, "latest")
@@ -22,6 +38,12 @@ export class Body extends Component {
       .then(json => {
         this.props.setPhotos(json);
       });
+
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   setPhotosList(page) {
@@ -35,7 +57,6 @@ export class Body extends Component {
   setImageSize(el) {
     let width = el.naturalWidth;
     let height = el.naturalHeight;
-    let parent = el.parentNode;
 
     if(width > height) {
       return `horizontal`;
@@ -47,7 +68,7 @@ export class Body extends Component {
   render() {
     return (
       <Router>
-        <Route path="/" render={() => {
+        <Route exact path="/" render={() => {
           return (
             <main role="main" className="body">
               <div className="container body__container">
@@ -85,7 +106,7 @@ export class Body extends Component {
           )
         }}
         />
-        <Route exact path="/photo/:id" render={() => <Modal state={this.props} />} /> 
+        <Route exact path="/photo/:id" render={() => <FullPhoto state={this.props} />} /> 
       </Router>
     )
   }

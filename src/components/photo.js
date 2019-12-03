@@ -9,14 +9,13 @@ export default class Photo extends Component {
   render() {
     return (
       <li 
-        className="column column--sm-6 column--md-4 column--lg-3 body__item">
+        className="column column--xs-6 column--sm-4 column--md-3 body__item">
         <Link className="body__link" to={`/photo/${this.props.id}`}>
           <figure className="body__figure">
             <img 
               className={`body__image body__image--${this.props.class()}`} 
               src={this.props.thumb}
             />
-            <p className="body__description"></p>
           </figure>
         </Link>
       </li>
